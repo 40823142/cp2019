@@ -66,12 +66,13 @@
 <v t="leo.20170710022041.1"><vh>@path markdown</vh>
 <v t="leo.20180115115910.1"><vh>2018</vh>
 <v t="leo.20180423103656.1"><vh>@edit 20180910.md</vh></v>
-<v t="leo.20191107121407.1"><vh>@edit 20191107.md</vh></v>
+<v t="leo.20191108003724.1"><vh>@edit 哈摟.md</vh></v>
 </v>
 </v>
 <v t="yen.20170108171733.83"><vh>產生 .key 與 .crt 指令</vh></v>
 </v>
 <v t="yen.20170108171930.1"><vh>@button https server</vh></v>
+<v t="yen.20170108171930.1"></v>
 <v t="yen.20170108171939.1"><vh>@button ipv6 https server</vh></v>
 </vnodes>
 <tnodes>

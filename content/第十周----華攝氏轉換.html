@@ -149,62 +149,11 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">第七周 微分方程式 << <a href='第七周 微分方程式.html'>Previous</a> <a href='Hello world.html'>Next</a> >> Hello world<br /><h1>亂數分組程式</h1>
+    <div id="tipue_search_content">Hello world << <a href='Hello world.html'>Previous</a> <a href='想看貓貓的點進來啦.html'>Next</a> >> 想看貓貓的點進來啦<br /><h1>第十周----華攝氏轉換</h1>
 <p></p>
-<p><span style="color: #000000;">Gits：<span style="color: #993366;"><a href="https://gist.github.com/40823142/80e449253df1db9c272fdb36dcd0aa55" style="color: #993366;">https://gist.github.com/40823142/?id=80e449253df1db9c272fdb36dcd0aa55</a></span></span></p>
-<p><span style="color: #000000;">Dartpad：<span style="color: #993366;"><a href="https://mde.tw/dartpad/?id=80e449253df1db9c272fdb36dcd0aa55" style="color: #993366;">https://mde.tw/dartpad/?id=80e449253df1db9c272fdb36dcd0aa55</a></span></span></p>
-<p><span style="color: #000000;">原始碼：</span></p>
-<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">import 'dart:html';
-
-void main() {
-  // 每一組 10 人
-  int num = 10;
-  // 組序由 1 開始
-  int gth = 1;
-  // 迴圈序號變數
-  int i;
-  // 每組學員暫存數列
-  var gp_list = [];
-  // 全班分組數列
-  var cp2019 = [];
-
-  HttpRequest.getString(
-          'https://mde.tw/cp2019/downloads/2019fall_cp_1a_list.txt')
-      .then((String resp) {
-    // 利用 trim() 去除字串最後的跳行符號, 之後再利用 split() 根據 \n 轉為數列
-    var stud_list = resp.trim().split("\n");
-    // 數列利用 shuffle() 方法以隨機方法弄亂順序
-    stud_list.shuffle();
-    // 逐一讀取已經弄亂的學生學號數列, 利用模數運算每幾人分成一組
-    for (i = 0; i &lt; stud_list.length; i++) {
-      // 0, 1~(num-1), num
-      if (i % num == 0) {
-        gp_list = [];
-        // 列印區隔符號
-        print('=' * 20);
-        print("group $gth :");
-        print(stud_list[i]);
-        // 在各分組數列中加入將對應的學員學號
-        gp_list.add(stud_list[i]);
-        gth = gth + 1;
-      } else {
-        print(stud_list[i]);
-        // 在各分組數列中加入將對應的學員學號
-        gp_list.add(stud_list[i]);
-      }
-      if (i % num == 0) {
-        // 逐步將各組暫存的分組數列加入全班分組數列中
-        cp2019.add(gp_list);
-      }
-    }
-    // 列出全班分組數列
-    print(cp2019);
-  });
-}</pre>
-<p></p>
-<p></p>
-<p><iframe height="600" src="https://dartpad.dev/embed-inline.html?id=80e449253df1db9c272fdb36dcd0aa55" width="800"></iframe></p>
-<br />第七周 微分方程式 << <a href='第七周 微分方程式.html'>Previous</a> <a href='Hello world.html'>Next</a> >> Hello world</div>
+<p>攝氏轉華氏：</p>
+<p><iframe height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=0531e7bcacabc538c5d646e923bb402f&amp;theme=dark" width="1200"></iframe></p>
+<p>華氏轉攝氏：<iframe height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=132e78a9b66a0e242a3a91b0f5a87813&amp;theme=dark" width="1200"></iframe></p><br />Hello world << <a href='Hello world.html'>Previous</a> <a href='想看貓貓的點進來啦.html'>Next</a> >> 想看貓貓的點進來啦</div>
         
     <!-- footer -->
       <div class="container">
