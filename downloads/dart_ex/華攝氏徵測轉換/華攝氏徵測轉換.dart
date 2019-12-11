@@ -1,33 +1,19 @@
-CtoF(num c) {
-  return c * 9 / 5 + 32;
-}
+//在此輸入溫度
+List candf = ["20C", "30C", "50F", "40C", "23F"];
 
-FtoC(num f) {
-  return (f - 32) * 5 / 9;
-}
+void main() {
+  for (var i in candf) {
+    if (i[2] == "C") {
+      var o = (i[0] + i[1]);
+      var c = num.parse(o);
+      num f = c * 9 / 5 + 32;
 
-main() {
-  int len;
-
-  var type;
-
-  var number;
-   //在此設定溫度
-  List temp = ["222C", "30C", "50F", "40C", "23F"];
-
-  for (var data in temp) {
-    len = data.length;
-
-    type = data[len - 1];
-
-    number = data.substring(0, len - 1);
-
-    number = int.parse(number);
-
-    if (type == "C") {
-      print("攝氏 $number 度 = 華氏 ${CtoF(number)} 度");
-    } else {
-      print("華氏 $number 度 = 攝氏 ${FtoC(number)} 度");
+      print("C $c °等於F $f °");}
+    if (i[2] == "F") {
+      var o = (i[0] + i[1]);
+      var f = num.parse(o);
+      num c = (f - 32) * 5 / 9;
+      print("F $f °等於C $c ° ");
     }
   }
 }
