@@ -138,7 +138,7 @@ init_mathjax();
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='迴圈程式.html'>迴圈程式</a><li class='has-children'><a href='練習Dartpad.html'>練習Dartpad</a><ul class='dropdown'><li><a href='Loop.html'>Loop</a><li><a href='第七周 微分方程式.html'>第七周 微分方程式</a><li><a href='亂數分組程式.html'>亂數分組程式</a><li><a href='Hello world.html'>Hello world</a><li><a href='第十周----華攝氏轉換.html'>第十周----華攝氏轉換</a><li><a href='第十二周作業----偵測按鈕.html'>第十二周作業----偵測按鈕</a><li><a href='第十三周影片.html'>第十三周影片</a></li></ul><li><a href='想看貓貓的點進來啦.html'>想看貓貓的點進來啦</a></li>
+                     <li><a href='迴圈程式.html'>迴圈程式</a><li class='has-children'><a href='練習Dartpad.html'>練習Dartpad</a><ul class='dropdown'><li><a href='Loop.html'>Loop</a><li><a href='第七周 微分方程式.html'>第七周 微分方程式</a><li><a href='亂數分組程式.html'>亂數分組程式</a><li><a href='Hello world.html'>Hello world</a><li><a href='第十周----華攝氏轉換.html'>第十周----華攝氏轉換</a><li><a href='第十二周作業----偵測按鈕.html'>第十二周作業----偵測按鈕</a><li><a href='第十三周----影片.html'>第十三周----影片</a><li><a href='第十五周----亂數分組-(網頁).html'>第十五周----亂數分組-(網頁)</a></li></ul><li><a href='想看貓貓的點進來啦.html'>想看貓貓的點進來啦</a></li>
                       </ul>
                 </nav>
               </div>
@@ -149,8 +149,30 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">第十二周作業----偵測按鈕 << <a href='第十二周作業----偵測按鈕.html'>Previous</a> <a href='想看貓貓的點進來啦.html'>Next</a> >> 想看貓貓的點進來啦<br /><h1>第十三周影片</h1>
-<p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/9n-AW6R4vB0" width="560"></iframe></p><br />第十二周作業----偵測按鈕 << <a href='第十二周作業----偵測按鈕.html'>Previous</a> <a href='想看貓貓的點進來啦.html'>Next</a> >> 想看貓貓的點進來啦</div>
+    <div id="tipue_search_content">第十三周----影片 << <a href='第十三周----影片.html'>Previous</a> <a href='想看貓貓的點進來啦.html'>Next</a> >> 想看貓貓的點進來啦<br /><h1>第十五周----亂數分組-(網頁)</h1>
+<p></p>
+<pre></pre>
+<script>
+function getDart(dirname){
+    source = "https://dartpad.github.io/embed-dart.html?gh_owner=40823142&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+    document.getElementById("iframe").src = source ;
+}
+function largest(){
+document.getElementById("iframe").width = document.body.clientWidth ;
+document.getElementById("iframe").height = document.body.clientWidth*0.5 ;
+}
+function original(){
+document.getElementById("iframe").width = 1200 ;
+document.getElementById("iframe").height = 800 ;
+}
+</script>
+<!-- 取 Dart 程式的按鈕 -->
+<p><button onclick="getDart('int')">亂數分組</button></p>
+<!-- 內建放入的 Dart 原始碼 -->
+<p><button onclick="largest()">放大</button> <button onclick="original()">回復</button></p>
+<p><iframe height="800" id="iframe" src="https://dartpad.dartlang.org/embed-dart.html?gh_owner=40823142&amp;gh_repo=cp2019&amp;gh_path=downloads/dart_ex/int&amp;theme=dark" width="1200"></iframe></p>
+<p></p>
+<br />第十三周----影片 << <a href='第十三周----影片.html'>Previous</a> <a href='想看貓貓的點進來啦.html'>Next</a> >> 想看貓貓的點進來啦</div>
         
     <!-- footer -->
       <div class="container">
