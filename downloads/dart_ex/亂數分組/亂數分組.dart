@@ -1,7 +1,7 @@
 import random
 import urllib3
  
-target_url = "https://raw.githubusercontent.com/mdecourse/cd2019/gh-pages/data/cda/cdaw1_student_list.txt"
+target_url = "https://github.com/40823142/cp2019/tree/master/downloads/dart_ex/%E4%BA%82%E6%95%B8%E5%88%86%E7%B5%84/math.txt"
  
 # 從 url 讀取資料, 之後利用 splitlines() 存入學員學號字串數列中
 http = urllib3.PoolManager()
