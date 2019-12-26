@@ -138,7 +138,7 @@ init_mathjax();
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='迴圈程式.html'>迴圈程式</a><li class='has-children'><a href='練習Dartpad.html'>練習Dartpad</a><ul class='dropdown'><li><a href='Loop.html'>Loop</a><li><a href='第七周 微分方程式.html'>第七周 微分方程式</a><li><a href='亂數分組程式.html'>亂數分組程式</a><li><a href='Hello world.html'>Hello world</a><li><a href='第十周----華攝氏轉換.html'>第十周----華攝氏轉換</a><li><a href='第十二周作業----偵測按鈕.html'>第十二周作業----偵測按鈕</a><li><a href='第十三周----影片.html'>第十三周----影片</a><li><a href='第十五周.html'>第十五周</a></li></ul><li><a href='想看貓貓的點進來啦.html'>想看貓貓的點進來啦</a></li>
+                     <li class='has-children'><a href='練習Dartpad.html'>練習Dartpad</a><ul class='dropdown'><li><a href='迴圈程式.html'>迴圈程式</a><li><a href='Loop.html'>Loop</a><li><a href='第七周.html'>第七周</a><li><a href='亂數分組程式.html'>亂數分組程式</a><li><a href='Hello world.html'>Hello world</a><li><a href='第十周.html'>第十周</a><li><a href='第十二周.html'>第十二周</a><li><a href='第十三周.html'>第十三周</a><li><a href='第十五周.html'>第十五周</a></li></ul><li><a href='想看貓貓的點進來啦.html'>想看貓貓的點進來啦</a></li>
                       </ul>
                 </nav>
               </div>
@@ -149,170 +149,12 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">Loop << <a href='Loop.html'>Previous</a> <a href='亂數分組程式.html'>Next</a> >> 亂數分組程式<br /><h1>第七周 微分方程式</h1>
-<p>Gits：<a href="https://gist.github.com/40823142/3ee5ccb9a812092694f5e2ddab7c06b1">https://gist.github.com/40823142/3ee5ccb9a812092694f5e2ddab7c06b1</a></p>
-<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">// 下列 Dart 程式, 利用 Runge Kutta 迭代運算法, 解常微分方程式
-// 設 t 為時間, x 則設為物體的位移
-// 假設要解 F=ma 的單一質量加上彈簧 (常數為 k) 與黏滯阻尼 (常數為 b)
-// f 為沿位移方向的施力
-// dx/dt = v, dv/dt = (f-kx-bv)/m
-// dx / dt = (t - x)/2, 起始值 t0=0, x0=1, 求 t=2 時的 x 值
-//
-// 已知起始值 t0 與 x0 後, 可以利用下列 rungeKutta 函式, 以
-// h 為每步階增量值, 求 dxdt 常微分方程式任一 t 的對應值 x
-// 定義函式 rungeKutta, 共有四個輸入變數
-// 物體質量
-const num m = 1;
-// 對質量的施力 f
-const num f = 0.0;
-// 彈簧係數
-const num k = 1;
-// 阻尼係數
-const num b = 1;
-
-// 呼叫運算時, 需要起始時間, 終點時間, 位移起始值與速度起始值, 增量 h
-rungeKutta(t0, x0, v0, t, h) {
-  // 利用步階增量值 h 與 t 的起始及終點值
-  // 計算需要迭代的次數 n
-  int n = ((t - t0) / h).toInt();
-  // 宣告 x 為雙浮點數, 且設為起始值 x0
-  double x = x0;
-  // 宣告 v 為雙浮點數, 且設為起始值 v0
-  double v = v0;
-  // 利用已知的 t0, x0, t 終點值與步階增量值 h, 迭代求 x 對應值
-  // 索引值 i 將每次增量 1, 從 i=1 執行 for 環圈至 i=n
-    print("t: ${t0.toStringAsFixed(3)}, x: ${x.toStringAsFixed(3)}, v: ${v.toStringAsFixed(3)}");
-  for (int i = 1; i &lt;= n; i++) {
-    // 將此階段的 t 與 x 值代入 dxdt 與 dvdt 函式求下列四個浮點變數值
-    // 因為必須兩個函式耦合, 必須同時計算
-    double xk1 = h * dxdt(t0, x, v);
-    double vk1 = h * dvdt(t0, x, v);
-    double xk2 = h * dxdt(t0 + 0.5 * h, x + 0.5 * xk1, v + 0.5 * vk1);
-    double vk2 = h * dvdt(t0 + 0.5 * h, x + 0.5 * xk1, v + 0.5 * vk1);
-    double xk3 = h * dxdt(t0 + 0.5 * h, x + 0.5 * xk2, v + 0.5 * vk2);
-    double vk3 = h * dvdt(t0 + 0.5 * h, x + 0.5 * xk2, v + 0.5 * vk2);
-    double xk4 = h * dxdt(t0 + h, x + xk3, v + vk3);
-    double vk4 = h * dvdt(t0 + h, x + xk3, v + vk3);
-    // 利用上述四個變數值求此步階增量後的對應 x 值
-    x = x + (1.0 / 6.0) * (xk1 + 2 * xk2 + 2 * xk3 + xk4);
-    v = v + (1.0 / 6.0) * (vk1 + 2 * vk2 + 2 * vk3 + vk4);
-    // 只列到小數點第三位
-    print("t: ${t0.toStringAsFixed(3)}, x: ${x.toStringAsFixed(3)}, v: ${v.toStringAsFixed(3)}");
-    // 每次 for 迴圈執行最後, 準備計算下一個步階增量後的 x 對應值
-    // t 起始值配合步階增量值 h, 進行增量
-    t0 = t0 + h;
-  }
-  // 完成 for 迴圈迭代後, 傳回與 t 終點值對應的 x 值
-  return [x, v];
-}
-
-// 將微分方程式 "dx / dt = v" 定義為 dxdt 函式
-dxdt(t, x, v) {
-  return v;
-}
-// dx/dt = v, dv/dt = (f-kx-bv)/m
-dvdt(t,x, v) {
-  return (f - k*x - b*v)/m;
-}
-
-// 定義 main() 主函式內容, 目的在利用 rungeKutta 函式
-// 解常微分方程式
-main() {
-// Driver method
-// num 資料型別可以是整數或雙浮點數
-  num t0 = 0;
-  num x0 = 1;
-  num v0 = 0;
-  num t = 20;
-  double h = 0.1;
-  rungeKutta(t0, x0, v0, t, h);
-}</pre>
-<p><iframe height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=3ee5ccb9a812092694f5e2ddab7c06b1&amp;theme=dark" width="1200"></iframe></p>
+    <div id="tipue_search_content">Hello world << <a href='Hello world.html'>Previous</a> <a href='第十二周.html'>Next</a> >> 第十二周<br /><h1>第十周</h1>
 <p></p>
-<p><img alt="" height="457" src="./../images/image (1).png" width="715"/></p>
-<p></p>
-<p></p>
-<p>Gits：<a href="https://gist.github.com/40823142/0b1d1fbe4acff3ee77816ee0179d6dd4">https://gist.github.com/40823142/0b1d1fbe4acff3ee77816ee0179d6dd4</a></p>
-<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">// 下列 Dart 程式, 利用 Runge Kutta 迭代運算法, 解常微分方程式
-// 設 t 為時間, x 則設為物體的位移
-// 假設要解 F=ma 的單一質量加上彈簧 (常數為 k) 與黏滯阻尼 (常數為 b)
-// f 為沿位移方向的施力
-// dx/dt = v, dv/dt = (f-kx-bv)/m
-// dx / dt = (t - x)/2, 起始值 t0=0, x0=1, 求 t=2 時的 x 值
-//
-// 已知起始值 t0 與 x0 後, 可以利用下列 rungeKutta 函式, 以
-// h 為每步階增量值, 求 dxdt 常微分方程式任一 t 的對應值 x
-// 定義函式 rungeKutta, 共有四個輸入變數
-// 物體質量
-const num m = 1;
-// 對質量的施力 f
-const num f = 0.0;
-// 彈簧係數
-const num k = 1;
-// 阻尼係數
-const num b = 0;
-
-// 呼叫運算時, 需要起始時間, 終點時間, 位移起始值與速度起始值, 增量 h
-rungeKutta(t0, x0, v0, t, h) {
-  // 利用步階增量值 h 與 t 的起始及終點值
-  // 計算需要迭代的次數 n
-  int n = ((t - t0) / h).toInt();
-  // 宣告 x 為雙浮點數, 且設為起始值 x0
-  double x = x0;
-  // 宣告 v 為雙浮點數, 且設為起始值 v0
-  double v = v0;
-  // 利用已知的 t0, x0, t 終點值與步階增量值 h, 迭代求 x 對應值
-  // 索引值 i 將每次增量 1, 從 i=1 執行 for 環圈至 i=n
-    print("t: ${t0.toStringAsFixed(3)}, x: ${x.toStringAsFixed(3)}, v: ${v.toStringAsFixed(3)}");
-  for (int i = 1; i &lt;= n; i++) {
-    // 將此階段的 t 與 x 值代入 dxdt 與 dvdt 函式求下列四個浮點變數值
-    // 因為必須兩個函式耦合, 必須同時計算
-    double xk1 = h * dxdt(t0, x, v);
-    double vk1 = h * dvdt(t0, x, v);
-    double xk2 = h * dxdt(t0 + 0.5 * h, x + 0.5 * xk1, v + 0.5 * vk1);
-    double vk2 = h * dvdt(t0 + 0.5 * h, x + 0.5 * xk1, v + 0.5 * vk1);
-    double xk3 = h * dxdt(t0 + 0.5 * h, x + 0.5 * xk2, v + 0.5 * vk2);
-    double vk3 = h * dvdt(t0 + 0.5 * h, x + 0.5 * xk2, v + 0.5 * vk2);
-    double xk4 = h * dxdt(t0 + h, x + xk3, v + vk3);
-    double vk4 = h * dvdt(t0 + h, x + xk3, v + vk3);
-    // 利用上述四個變數值求此步階增量後的對應 x 值
-    x = x + (1.0 / 6.0) * (xk1 + 2 * xk2 + 2 * xk3 + xk4);
-    v = v + (1.0 / 6.0) * (vk1 + 2 * vk2 + 2 * vk3 + vk4);
-    // 只列到小數點第三位
-    print("t: ${t0.toStringAsFixed(3)}, x: ${x.toStringAsFixed(3)}, v: ${v.toStringAsFixed(3)}");
-    // 每次 for 迴圈執行最後, 準備計算下一個步階增量後的 x 對應值
-    // t 起始值配合步階增量值 h, 進行增量
-    t0 = t0 + h;
-  }
-  // 完成 for 迴圈迭代後, 傳回與 t 終點值對應的 x 值
-  return [x, v];
-}
-
-// 將微分方程式 "dx / dt = v" 定義為 dxdt 函式
-dxdt(t, x, v) {
-  return v;
-}
-// dx/dt = v, dv/dt = (f-kx-bv)/m
-dvdt(t,x, v) {
-  return (f - k*x - b*v)/m;
-}
-
-// 定義 main() 主函式內容, 目的在利用 rungeKutta 函式
-// 解常微分方程式
-main() {
-// Driver method
-// num 資料型別可以是整數或雙浮點數
-  num t0 = 0;
-  num x0 = 1;
-  num v0 = 0;
-  num t = 20;
-  double h = 0.1;
-  rungeKutta(t0, x0, v0, t, h);
-}</pre>
-<p></p>
-<p><iframe height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=0b1d1fbe4acff3ee77816ee0179d6dd4&amp;theme=dark" width="1200"></iframe> </p>
-<p><img alt="" height="474" src="./../images/image (2).png" width="798"/></p>
-<br />Loop << <a href='Loop.html'>Previous</a> <a href='亂數分組程式.html'>Next</a> >> 亂數分組程式</div>
+<p>攝氏轉華氏：</p>
+<p><iframe height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=0531e7bcacabc538c5d646e923bb402f&amp;theme=dark" width="1200"></iframe></p>
+<p>華氏轉攝氏：<iframe height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=132e78a9b66a0e242a3a91b0f5a87813&amp;theme=dark" width="1200"></iframe></p>
+<br />Hello world << <a href='Hello world.html'>Previous</a> <a href='第十二周.html'>Next</a> >> 第十二周</div>
         
     <!-- footer -->
       <div class="container">
