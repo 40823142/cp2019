@@ -149,9 +149,39 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">第十三周 << <a href='第十三周.html'>Previous</a> <a href='第十五周.html'>Next</a> >> 第十五周<br /><h1>第十四周</h1>
-<p><img alt="" height="1232" src="./../images/Html 流程圖.png" width="1200"/></p>
-<br />第十三周 << <a href='第十三周.html'>Previous</a> <a href='第十五周.html'>Next</a> >> 第十五周</div>
+    <div id="tipue_search_content">第十六周 << <a href='第十六周.html'>Previous</a> <a href='想看貓貓的點進來啦.html'>Next</a> >> 想看貓貓的點進來啦<br /><h1>第十七周</h1>
+<p style="text-align: center;">國旗</p>
+<p><canvas height="200" id="canvas" width="300"></canvas> <button id="clear">清除</button> <button id="usa">俄羅斯國旗</button> <button id="fr">法國國旗</button> <button id="LN">荷蘭國旗</button> <button id="BDR">德國國旗</button> <button id="ROC">中華民國國旗</button> <button id="jp">日本國旗</button></p>
+<script src="/../cp2019/downloads/dart_ex/Flag/flag.js"></script>
+<p>-------------------------------------------------------------------------------------------------------------</p>
+<script>
+function getDart(dirname){
+    source = "https://dartpad.github.io/embed-dart.html?gh_owner=40823142&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+    document.getElementById("iframe").src = source ;
+}
+function getHtmlDart(dirname){
+    source = "https://dartpad.github.io/embed-html.html?gh_owner=40823142&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+function getFlutter(dirname){
+    source = "https://dartpad.github.io/embed-flutter.html?gh_owner=40823142&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+function largest(){
+document.getElementById("iframe").width = document.body.clientWidth ;
+document.getElementById("iframe").height = document.body.clientWidth*0.5 ;
+}
+function original(){
+document.getElementById("iframe").width = 800 ;
+document.getElementById("iframe").height = 600 ;
+}
+</script>
+<!-- 取 Dart 程式的按鈕 -->
+<p style="text-align: center;">重量轉換</p>
+<p style="text-align: center;"><button onclick="getDart('重量轉換')">重量轉換</button></p>
+<p style="text-align: center;"><button onclick="largest()">放大</button> <button onclick="original()">回復</button></p>
+<p><iframe height="600" id="iframe" src="https://dartpad.dartlang.org/embed-dart.html?gh_owner=40823142&amp;gh_repo=cp2019&amp;gh_path=downloads/dart_ex/重量轉換&amp;theme=dark" width="800"></iframe></p>
+<p></p><br />第十六周 << <a href='第十六周.html'>Previous</a> <a href='想看貓貓的點進來啦.html'>Next</a> >> 想看貓貓的點進來啦</div>
         
     <!-- footer -->
       <div class="container">
