@@ -504,7 +504,35 @@ document.getElementById("iframe").height = 800 ;
 <p><canvas height="200" id="canvas" width="300"></canvas> <button id="clear">清除</button> <button id="usa">俄羅斯國旗</button> <button id="fr">法國國旗</button> <button id="LN">荷蘭國旗</button> <button id="BDR">德國國旗</button> <button id="ROC">中華民國國旗</button> <button id="jp">日本國旗</button></p>
 <script src="/../cp2019/downloads/dart_ex/Flag/flag.js"></script>
 <p>-------------------------------------------------------------------------------------------------------------</p>
-<p><iframe height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=0a2736926b2686b2f2407c54a406b43c&amp;theme=dark" width="1200"></iframe></p><h1>想看貓貓的點進來啦</h1>
+<p><iframe height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=0a2736926b2686b2f2407c54a406b43c&amp;theme=dark" width="1200"></iframe></p>
+<script>
+function getDart(dirname){
+    source = "https://dartpad.github.io/embed-dart.html?gh_owner=40823142&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+    document.getElementById("iframe").src = source ;
+}
+function getHtmlDart(dirname){
+    source = "https://dartpad.github.io/embed-html.html?gh_owner=40823142&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+function getFlutter(dirname){
+    source = "https://dartpad.github.io/embed-flutter.html?gh_owner=40823142&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+function largest(){
+document.getElementById("iframe").width = document.body.clientWidth ;
+document.getElementById("iframe").height = document.body.clientWidth*0.5 ;
+}
+function original(){
+document.getElementById("iframe").width = 800 ;
+document.getElementById("iframe").height = 600 ;
+}
+</script>
+<!-- 取 Dart 程式的按鈕 -->
+<p><button onclick="getHtmlDart('flag')">國旗</button></p>
+<!-- 內建放入的 Dart 原始碼 -->
+<p><button onclick="largest()">放大</button> <button onclick="original()">回復</button></p>
+<p><iframe height="600" id="iframe" src="https://dartpad.dartlang.org/embed-dart.html?gh_owner=40823142&amp;gh_repo=cp2019&amp;gh_path=downloads/dart_ex/flag&amp;theme=dark" width="800"></iframe></p>
+<p><a href="https://github.com/thatisuday/dart-getting-started-guide">https://github.com/thatisuday/dart-getting-started-guide</a></p><h1>想看貓貓的點進來啦</h1>
 <p><img src="https://scontent.ftpe2-1.fna.fbcdn.net/v/t1.15752-9/56616331_2061694463926317_5630084470104129536_n.jpg?_nc_cat=107&amp;_nc_oc=AQm6qPP7xED62-ltoBTxWBkwjknyr5kCsarEvwQMUcPm9IimaFhQ0H1P0bQ4M5Y4tlE&amp;_nc_ht=scontent.ftpe2-1.fna&amp;oh=0c8337769032578f879655bc85433f7a&amp;oe=5E20339F"/></p>
 <p><img src="https://scontent.ftpe2-2.fna.fbcdn.net/v/t1.15752-9/56178490_632755790479410_1346349866497867776_n.jpg?_nc_cat=106&amp;_nc_oc=AQkTz7VIRGyZk3m5uyztQ96zzAuBelBup82_xrea6C83ctDXdWL3fa5McOFwaJTiTZs&amp;_nc_ht=scontent.ftpe2-2.fna&amp;oh=f209b6f1580b379163feec6d7e253390&amp;oe=5E5AF6B1"/></p>
 <p><img src="https://scontent.ftpe2-2.fna.fbcdn.net/v/t1.15752-9/56426937_812590459125024_5129487047999881216_n.jpg?_nc_cat=109&amp;_nc_oc=AQkQZE-6kxCD-96FuSpkX-JKxbPUX1We4uMGGADP34BU3hVnL00QTVdO8JyNRZLcmP0&amp;_nc_ht=scontent.ftpe2-2.fna&amp;oh=15bc1bb2bff7aec13c3064615257f5ec&amp;oe=5E617328"/></p>
