@@ -34,9 +34,6 @@
 <v t="leo.20180902120523.18"><vh>導入影片</vh>
 <v t="leo.20180902120523.19"><vh>iframe 導入影片</vh></v>
 </v>
-<v t="leo.20200108211344.1"><vh>hello word</vh>
-<v t="leo.20200108211344.2"><vh>hello word dart</vh></v>
-</v>
 </v>
 </v>
 </v>
@@ -321,15 +318,5 @@ vertical: body pane on the botton</t>
 * 按 Esc 可以退出全螢幕或全域檢視 (Escape)
 
 </t>
-<t tx="leo.20200108211344.1">&lt;section data-markdown&gt;
-    &lt;script type="text/template"&gt;
-@others
-    &lt;/script&gt;
-&lt;/section&gt;
-
-						</t>
-<t tx="leo.20200108211344.2">## Hello word dart
-
-&lt;p&gt;&lt;iframe width="1000" height="800" src="https://dartpad.dev/embed-inline.html?id=901a4415106d7fa670913ecf9e1e2df1"&gt;&lt;/iframe&gt;&lt;/p&gt;</t>
 </tnodes>
 </leo_file>
