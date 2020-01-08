@@ -91,32 +91,10 @@ $$I = \int \rho R^{2} dV$$
 
 						
 </t>
-<t tx="leo.20180902120523.17">## 利用 Markdown 寫投影片
+<t tx="leo.20180902120523.17">## Hello world
 以下利用 Markdown 格式展示 Python 程式碼:
 ```
-@language python
-# use threading and subprocess to threading the make process
-import os
-import subprocess
-import threading
-
-def domake():
-    
-    path = "../exposed/api/exposed"
-    ubuntu = "../Ubuntu"
-    
-    # create obj path
-    
-    if not os.path.exists(path+"/../obj"):
-        os.makedirs(path+"/../obj")
-    
-    subprocess.call(["make", "clean"], cwd=path)
-    subprocess.call("make", cwd=path)
-    subprocess.call(["cp", "{libslvs.so, _slvs.so, slvs.py}", ubuntu], cwd=path)
-    subprocess.call(["python3", "circle_ex.py"], cwd=path+"/"+ubuntu)
-    
-make = threading.Thread(target=domake)
-make.start()
+&lt;p&gt;&lt;iframe width="1000" height="800" src="https://dartpad.dev/embed-inline.html?id=901a4415106d7fa670913ecf9e1e2df1"&gt;&lt;/iframe&gt;&lt;/p&gt;
 ```
 </t>
 <t tx="leo.20180902120523.18">&lt;section data-markdown&gt;
