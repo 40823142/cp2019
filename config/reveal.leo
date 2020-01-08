@@ -321,10 +321,9 @@ vertical: body pane on the botton</t>
 * 按 Esc 可以退出全螢幕或全域檢視 (Escape)
 
 </t>
-<t tx="leo.20200108211344.1">@others
-    &lt;/script&gt;
-&lt;/section&gt;
-
+<t tx="leo.20200108211344.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+@others
 
 						
 </t>
