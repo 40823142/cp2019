@@ -324,9 +324,10 @@ vertical: body pane on the botton</t>
 <t tx="leo.20200108211344.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
+    &lt;/script&gt;
+&lt;/section&gt;
 
-						
-</t>
+						</t>
 <t tx="leo.20200108211344.2">## Hello word dart
 
 &lt;p&gt;&lt;iframe width="1000" height="800" src="https://dartpad.dev/embed-inline.html?id=901a4415106d7fa670913ecf9e1e2df1"&gt;&lt;/iframe&gt;&lt;/p&gt;</t>
