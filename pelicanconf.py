@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = '40823142'
-SITENAME = 'Cp2019 40823142ㄉla'
+SITENAME = '40823142 wcm 2020'
 # 不要用文章所在目錄作為類別
 USE_FOLDER_AS_CATEGORY = False
 
